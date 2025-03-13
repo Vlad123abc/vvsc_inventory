@@ -11,13 +11,13 @@ public class InventoryRepository {
 
 	private static String filename = "data/items.txt";
 	private Inventory inventory;
-	public InventoryRepository(){
+	public InventoryRepository() throws IOException {
 		this.inventory=new Inventory();
 		readParts();
 		readProducts();
 	}
 
-	public void readParts(){
+	public void readParts() throws IOException {
 		//ClassLoader classLoader = InventoryRepository.class.getClassLoader();
 		File file = new File(filename);
 		ObservableList<Part> listP = FXCollections.observableArrayList();
@@ -30,8 +30,10 @@ public class InventoryRepository {
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+			throw new FileNotFoundException(e.toString());
 		} catch (IOException e) {
 			e.printStackTrace();
+			throw new IOException(e.toString());
 		}
 		inventory.setAllParts(listP);
 	}
@@ -155,6 +157,9 @@ public class InventoryRepository {
 	}
 
 	public void addPart(Part part){
+		int id = this.getAutoPartId();
+		part.setPartId(id);
+
 		inventory.addPart(part);
 		writeAll();
 	}
