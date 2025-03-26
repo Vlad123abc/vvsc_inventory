@@ -87,7 +87,11 @@ public abstract class Part {
         if(name.equals("")) {
             errorMessage += "A name has not been entered. ";
         }
-        if(price < 0.01) {
+        if(name.length()>255)
+        {
+            errorMessage+= "Name too large.";
+        }
+        if(price <= 0) {
             errorMessage += "The price must be greater than 0. ";
         }
         if(inStock < 1) {

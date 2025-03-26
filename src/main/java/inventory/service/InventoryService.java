@@ -14,11 +14,20 @@ public class InventoryService {
     public void addInhousePart(String name, double price, int inStock, int min, int  max, int partDynamicValue){
         // InhousePart inhousePart = new InhousePart(repo.getAutoPartId(), name, price, inStock, min, max, partDynamicValue);
         InhousePart inhousePart = new InhousePart(0, name, price, inStock, min, max, partDynamicValue);
-        repo.addPart(inhousePart);
+        String errorMessage = "";
+        errorMessage = Part.isValidPart(name,price,inStock,min,max,"");
+        if(errorMessage.isEmpty()){
+            repo.addPart(inhousePart);
+        }
+        else throw new RuntimeException(errorMessage);
     }
     public void addOutsourcePart(String name, double price, int inStock, int min, int  max, String partDynamicValue){
         OutsourcedPart outsourcedPart = new OutsourcedPart(repo.getAutoPartId(), name, price, inStock, min, max, partDynamicValue);
-        repo.addPart(outsourcedPart);
+        String errorMessage = Part.isValidPart(name,price,inStock,min,max,"");
+        if(errorMessage.isEmpty()){
+            repo.addPart(outsourcedPart);
+        }
+        else throw new RuntimeException(errorMessage);
     }
 
     public void addProduct(String name, double price, int inStock, int min, int  max, ObservableList<Part> addParts){
