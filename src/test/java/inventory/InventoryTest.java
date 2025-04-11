@@ -23,6 +23,16 @@ public class InventoryTest {
     }
 
     @Test
+    public void testNoMatchFound_empty_list() {
+        Inventory inventory = new Inventory();
+        ObservableList<Part> parts = FXCollections.observableArrayList();
+
+        Product result = inventory.lookupProduct("Produs");
+        assertEquals(0, result.getProductId());
+        assertNull(result.getName());
+    }
+
+    @Test
     public void testPartialMatchNoExactMatch() {
         Inventory inventory = new Inventory();
         ObservableList<Part> parts = FXCollections.observableArrayList();

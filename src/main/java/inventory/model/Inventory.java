@@ -51,18 +51,26 @@ public class Inventory {
 //        }
 //        return null;
 //    }
-    public Product lookupProduct(String searchItem) {
+    public Product lookupProduct(String searchItem)
+    {
         boolean isFound = false;
         Product targetProduct = null;
-        int i;
-        for(i=0;i<products.size();i++) {
+        for(int i = 0; i < products.size(); i++)
+        {
             Product p = products.get(i);
-            if(p.getName().contains(searchItem) || (p.getProductId()+"").equals(searchItem)) {
+            if(p.getName().contains(searchItem))
+            {
+                targetProduct = p;
+                isFound = true;
+            }
+            if ((p.getProductId()+"").equals(searchItem))
+            {
                 targetProduct = p;
                 isFound = true;
             }
         }
-        if(isFound == false) {
+        if(isFound == false)
+        {
             return new Product(0, null, 0.0, 0, 0, 0, null);
         }
         return targetProduct;
