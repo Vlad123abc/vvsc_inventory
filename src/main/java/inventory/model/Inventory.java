@@ -52,11 +52,20 @@ public class Inventory {
 //        return null;
 //    }
     public Product lookupProduct(String searchItem) {
-        for(Product p: products) {
-            if(p.getName().contains(searchItem) || (p.getProductId()+"").equals(searchItem))
-                return p;
+        boolean isFound = false;
+        Product targetProduct = null;
+        int i;
+        for(i=0;i<products.size();i++) {
+            Product p = products.get(i);
+            if(p.getName().contains(searchItem) || (p.getProductId()+"").equals(searchItem)) {
+                targetProduct = p;
+                isFound = true;
+            }
         }
-        return new Product(0, null, 0.0, 0, 0, 0, null);
+        if(isFound == false) {
+            return new Product(0, null, 0.0, 0, 0, 0, null);
+        }
+        return targetProduct;
     }
 
     /**
