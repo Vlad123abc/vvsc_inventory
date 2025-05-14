@@ -113,10 +113,10 @@
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.3.1</version>
         </plugin>
-        <!--<plugin>
+        <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.13.0</version>
-        </plugin>-->
+        </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>3.3.0</version>
@@ -157,7 +157,7 @@
             <mainClass>inventory.Main</mainClass>
           </configuration>
         </plugin>
-        <plugin>
+        <!--<plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.13.0</version>
@@ -166,13 +166,13 @@
             <target>17</target>
             <release>17</release>
             <compilerArgs>
-              <arg>--module-path</arg>
+              <arg>&#45;&#45;module-path</arg>
               <arg>/opt/javafx-sdk-17/lib</arg>
-              <arg>--add-modules</arg>
+              <arg>&#45;&#45;add-modules</arg>
               <arg>javafx.controls,javafx.fxml</arg>
             </compilerArgs>
           </configuration>
-        </plugin>
+        </plugin>-->
       </plugins>
     </pluginManagement>
   </build>
