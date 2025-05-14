@@ -162,12 +162,14 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.13.0</version>
           <configuration>
-            <release>11</release>
+            <release>17</release>
             <compilerArgs>
               <arg>--module-path</arg>
               <arg>${javafx.module.path}</arg>
               <arg>--add-modules</arg>
-              <arg>javafx.controls,javafx.fxml</arg>
+              <arg>javafx.controls</arg>
+              <arg>--add-modules</arg>
+              <arg>javafx.fxml</arg>
             </compilerArgs>
           </configuration>
         </plugin>
