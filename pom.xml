@@ -113,10 +113,10 @@
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.3.1</version>
         </plugin>
-        <plugin>
+        <!--<plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.13.0</version>
-        </plugin>
+        </plugin>-->
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>3.3.0</version>
@@ -157,20 +157,20 @@
             <mainClass>your.main.ClassName</mainClass>
           </configuration>
         </plugin>
-        <!--<plugin>
+        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.1</version>
           <configuration>
             <release>11</release>
             <compilerArgs>
-              <arg>&#45;&#45;module-path</arg>
+              <arg>--module-path</arg>
               <arg>${javafx.module.path}</arg>
-              <arg>&#45;&#45;add-modules</arg>
+              <arg>--add-modules</arg>
               <arg>javafx.controls,javafx.fxml</arg>
             </compilerArgs>
           </configuration>
-        </plugin>-->
+        </plugin>
 
       </plugins>
     </pluginManagement>
