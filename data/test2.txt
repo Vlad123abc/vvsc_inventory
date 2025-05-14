@@ -1,3 +1,5 @@
 I,1,TestInhousePart,15.0,10,1,20,123
+I,2,TestInhousePart,15.0,10,1,20,123
 P,1,TestProduct,100.0,5,1,10,1
+P,2,TestProduct,100.0,5,1,10,1
 Mock for Product, hashCode: 711310213,

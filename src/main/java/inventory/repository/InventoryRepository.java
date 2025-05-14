@@ -9,8 +9,15 @@ import java.util.StringTokenizer;
 
 public class InventoryRepository {
 
-	private static String filename = "data/items.txt";
-	private Inventory inventory;
+	public String filename = "data/items.txt";
+	public Inventory inventory;
+	public InventoryRepository(String filename) throws IOException {
+		this.inventory=new Inventory();
+		this.filename = filename;
+		readParts();
+		readProducts();
+	}
+
 	public InventoryRepository() throws IOException {
 		this.inventory=new Inventory();
 		readParts();
