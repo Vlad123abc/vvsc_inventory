@@ -167,7 +167,7 @@
             <release>17</release>
             <compilerArgs>
               <arg>--module-path</arg>
-              <arg>${path.to.javafx}</arg>
+              <arg>/opt/javafx-sdk-17/lib</arg>
               <arg>--add-modules</arg>
               <arg>javafx.controls,javafx.fxml</arg>
             </compilerArgs>
